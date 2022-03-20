@@ -151,45 +151,58 @@ const fetchAPI = function(e){
       .then(function(responseJson) {
         console.log(responseJson);
 
+        let qty=responseJson.length
+        console.log(qty)
+
         let myList = new BreweryBatch()
 
         for (let counter=0; counter<5; counter++){
 
-          let brewery = responseJson[counter].name
-          let street = responseJson[counter].street
-          let city = responseJson[counter].city
-          let breweryLink = responseJson[counter].website_url
-          const h1Elem = document.createElement('h1')
-          const h2Elem = document.createElement('h2')
-          const pElem = document.createElement('p')
-          const aElem = document.createElement('a')
+          if (counter<qty){
 
-          const brew = {
-            breweryName:brewery,
-            breweryStreet:street,
-            breweryCity:city,
-            breweryLink,
+            let brewery = responseJson[counter].name
+            let street = responseJson[counter].street
+            let city = responseJson[counter].city
+            let breweryLink = responseJson[counter].website_url
+            const h1Elem = document.createElement('h1')
+            const h2Elem = document.createElement('h2')
+            const pElem = document.createElement('p')
+            const aElem = document.createElement('a')
+
+            const brew = {
+              breweryName:brewery,
+              breweryStreet:street,
+              breweryCity:city,
+              breweryLink,
+            }
+
+            myList.breweryList.push(brew)
+
+            //could have used map
+
+            h1Elem.innerText=brewery
+            h1Elem.id="beer-name"
+            h2Elem.innerText=city
+            h2Elem.id="beer-city"
+            pElem.innerText=street
+            pElem.id="beer-street"
+            aElem.href=breweryLink
+            aElem.id="brewery-link"
+            aElem.innerText="Website"
+
+            divEl.append(h1Elem)
+            divEl.append(h2Elem)
+            divEl.append(pElem)
+            divEl.append(aElem)
+
           }
 
-          myList.breweryList.push(brew)
 
-          //could have used map
 
-          h1Elem.innerText=brewery
-          h1Elem.id="beer-name"
-          h2Elem.innerText=city
-          h2Elem.id="beer-city"
-          pElem.innerText=street
-          pElem.id="beer-street"
-          aElem.href=breweryLink
-          aElem.id="brewery-link"
-          aElem.innerText="Website"
+        }
 
-          divEl.append(h1Elem)
-          divEl.append(h2Elem)
-          divEl.append(pElem)
-          divEl.append(aElem)
-
+        if (qty===0){
+          alert("No More Beer For You")
         }
 
         let generateJson = document.getElementById('myCheck');

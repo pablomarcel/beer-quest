@@ -1,4 +1,4 @@
-# Beer Punk
+# Beer Punk 1.0
 # Introduction #
 
 Beer Punk displays a set of 5 local breweries per page based on State and City.
@@ -32,15 +32,18 @@ Also, this app uses vanilla Javascript and the Jasmine Testing Suite.
 
 * Instead of having a field for page number, have buttons for next, previous page (implement better pagination)
 * Have the text style of the Breweries change depending on the Brewery type, i.e., micro, nano, regional, brewpub, large, planning, bar, contract, proprietor, closed
-* Have an option to select individual elements coming from the response object to add them to a list and store them in a database
+* Have an option to select individual elements coming from the response object to add them to a 'Visit Later' list and store them in a database
 * Implement the Google Maps API or other to locate the Breweries
 * Improve CSS and the user experience in general
-* Implement a navigation bar
+* Implement a navigation bar. Have the option to search by Brewery, or display list
 * Ability to click on a Brewery and display additional details. The Open Brewery DB API has functionality to search by Brewery.
-* Implement Continuous Integration
-* Publish in Heroku, Digital Ocean or PythonAnywhere
+* Implement Continuous Integration, TravisCI or other CI tools
+* Publish in Heroku, DigitalOcean or PythonAnywhere
 * if the API returns an empty array, display a message to the user
 * if the API returns an empty array, display an error message if the user selected Export to JSON
+* Verify that a State actually exists
+* Verify that a City actually exists
+* Verify that the combination of State and City actually exists
 
 
 
