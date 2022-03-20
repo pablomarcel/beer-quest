@@ -205,6 +205,22 @@ const fetchAPI = function(e){
           alert("No More Beer For You")
         }
 
+        //I got sweetalert working. I am commenting out this section because I installed it through
+        //npm following instructions here:
+        //https://sweetalert.js.org/guides/#installation
+        // Not sure if the person who will review this code has to go through extra steps to get
+        //this working in his/her machine
+
+        // if (qty===0){
+        //   swal({
+        //     icon: 'error',
+        //     title: 'API returned Empty Array...',
+        //     text: 'No More Beer For You!',
+        //
+        //   })
+        //
+        // }
+
         let generateJson = document.getElementById('myCheck');
 
         //console.log(generateJson.checked)
