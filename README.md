@@ -39,6 +39,7 @@ Also, this app uses vanilla Javascript and the Jasmine Testing Suite.
 * Ability to click on a Brewery and display additional details. The Open Brewery DB API has functionality to search by Brewery.
 * Implement Continuous Integration
 * Publish in Heroku, Digital Ocean or PythonAnywhere
+* if the API returns an empty array, display a message to the user
 
 
 

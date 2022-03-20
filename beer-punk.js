@@ -72,38 +72,6 @@ button2.addEventListener('click', ()=>{
   document.getElementById("myCheck").checked = false
 })
 
-// const selectOption = (e) =>{
-//   e.preventDefault()
-//   const selection = selector.value;
-//
-//   if (selection==="job-opportunity"){
-//     //e.preventDefault()
-//     const jobFields = document.getElementById('jobs')
-//     const codeFields = document.getElementById('codes')
-//     codeFields.classList.add('hidden')
-//     codeFields.classList.remove('show')
-//     jobFields.classList.remove('hidden')
-//     jobFields.classList.add('show')
-//
-//   } else if (selection==="talk-code"){
-//     const codeFields = document.getElementById('codes')
-//     const jobFields = document.getElementById('jobs')
-//     jobFields.classList.add('hidden')
-//     jobFields.classList.remove('show')
-//     codeFields.classList.remove('hidden')
-//     codeFields.classList.add('show')
-//   }
-// }
-
-// function check() {
-//   document.getElementById("myCheck").checked = true;
-// }
-//
-// function uncheck() {
-//   document.getElementById("myCheck").checked = false;
-// }
-
-
 "use strict";
 
 function exportToJsonFile(jsonData) {
@@ -143,19 +111,6 @@ class BreweryBatch{
 
 const deleteElements = function (){
 
-  //timing function did not work
-  //add a promise instead
-
-  // const notice = document.getElementById('maintenance-notice')
-  // setTimeout(()=>{
-  //
-  //   notice.style.display='none'
-  //
-  // }, 1000)
-
-
-  // add a time delay function
-
   let parentDiv = document.getElementById('brewery-container');
   while (parentDiv.firstChild){
     parentDiv.firstChild.remove()
@@ -183,36 +138,9 @@ const fetchAPI = function(e){
   const city = cityEl.value
   let url = urlBuilder(state, city, page)
 
-  // let divElCheck = document.getElementById('checkbox-container');
-  //
-  // let x = document.createElement("INPUT");
-  // x.setAttribute("type", "checkbox");
-  // x.id="myCheck"
-  // x.className="checkbox-element"
-  //
-  //
-  // let button1 = document.createElement("button")
-  // let button2 = document.createElement("button")
-  //
-  // button1.id="button-1"
-  // button2.id="button-2"
-  //
-  // button1.innerText="Export JSON"
-  // button1.className="btn btn-primary mr-4"
-  // button2.innerText="Don't Export JSON"
-  // button2.className="btn btn-primary mr-4"
-  //
-  // divElCheck.append(x)
-  // divElCheck.append(button1)
-  // divElCheck.append(button2)
-  //
-  // button1.addEventListener('click', ()=>{
-  //   document.getElementById("myCheck").checked = true
-  // })
-  //
-  // button2.addEventListener('click', ()=>{
-  //   document.getElementById("myCheck").checked = false
-  // })
+  if(formEl){
+    deleteElements()
+  }
 
   fetch(url)
       .then(function(data) {
