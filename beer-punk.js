@@ -3,8 +3,24 @@ const stateEl = document.getElementById('state');
 const pageEl = document.getElementById('page');
 const cityEl = document.getElementById('city');
 const selector = document.getElementById("contact-kind")
-
 let divElCheck = document.getElementById('checkbox-container');
+
+const notice = document.getElementById('upgrade-notice')
+setTimeout(()=>{
+
+  notice.style.display='none'
+
+}, 10000)
+
+let secondsRemaining =5
+let countdownInterval = setInterval(function () {
+  if (secondsRemaining > 0) {
+    secondsRemaining--
+    console.log(secondsRemaining)
+  } else {
+    clearInterval(countdownInterval)
+  }
+},1000)
 
 let x = document.createElement("INPUT");
 x.setAttribute("type", "checkbox");
