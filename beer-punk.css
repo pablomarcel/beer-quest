@@ -1,5 +1,14 @@
+/*.container{*/
+/*    !*font-size: 45px;*!*/
+/*    background-color: black;*/
+/*    !*color: #ba9d37;*!*/
+/*    !*color: blue;*!*/
+/*}*/
+
 body {
     font-size: 16px;
+    /*background: black;*/
+    /*background-color: black;*/
 }
 
 .top-title{
@@ -27,12 +36,19 @@ input:valid{
     font-size: 40px;
     background-color: white;
     /*color: #ba9d37;*/
-    color: blue;
+    color: tomato;
 }
 
 #beer-city{
     font-size: 30px;
     background-color: white;
     /*color: #ba9d37;*/
-    color: orangered;
+    color: blue;
+}
+
+#beer-street{
+    font-size: 16px;
+    background-color: white;
+    /*color: #ba9d37;*/
+    color: cadetblue;
 }

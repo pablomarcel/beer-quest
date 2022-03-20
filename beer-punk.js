@@ -23,9 +23,27 @@ button1.className="btn btn-primary mr-4"
 button2.innerText="Don't Export JSON"
 button2.className="btn btn-primary mr-4"
 
-divElCheck.append(x)
-divElCheck.append(button1)
-divElCheck.append(button2)
+if(x){
+  if (divElCheck){
+    divElCheck.append(x)
+  }
+
+}
+
+if (button1){
+  if(divElCheck){
+    divElCheck.append(button1)
+  }
+
+}
+
+if (button2){
+  if(divElCheck){
+    divElCheck.append(button2)
+  }
+
+}
+
 
 button1.addEventListener('click', ()=>{
   document.getElementById("myCheck").checked = true
@@ -34,7 +52,6 @@ button1.addEventListener('click', ()=>{
 button2.addEventListener('click', ()=>{
   document.getElementById("myCheck").checked = false
 })
-
 
 // const selectOption = (e) =>{
 //   e.preventDefault()
@@ -147,6 +164,37 @@ const fetchAPI = function(e){
   const city = cityEl.value
   let url = urlBuilder(state, city, page)
 
+  // let divElCheck = document.getElementById('checkbox-container');
+  //
+  // let x = document.createElement("INPUT");
+  // x.setAttribute("type", "checkbox");
+  // x.id="myCheck"
+  // x.className="checkbox-element"
+  //
+  //
+  // let button1 = document.createElement("button")
+  // let button2 = document.createElement("button")
+  //
+  // button1.id="button-1"
+  // button2.id="button-2"
+  //
+  // button1.innerText="Export JSON"
+  // button1.className="btn btn-primary mr-4"
+  // button2.innerText="Don't Export JSON"
+  // button2.className="btn btn-primary mr-4"
+  //
+  // divElCheck.append(x)
+  // divElCheck.append(button1)
+  // divElCheck.append(button2)
+  //
+  // button1.addEventListener('click', ()=>{
+  //   document.getElementById("myCheck").checked = true
+  // })
+  //
+  // button2.addEventListener('click', ()=>{
+  //   document.getElementById("myCheck").checked = false
+  // })
+
   fetch(url)
       .then(function(data) {
         //debugger
@@ -185,6 +233,7 @@ const fetchAPI = function(e){
           h2Elem.innerText=city
           h2Elem.id="beer-city"
           pElem.innerText=street
+          pElem.id="beer-street"
           aElem.href=breweryLink
           aElem.id="brewery-link"
           aElem.innerText="Website"

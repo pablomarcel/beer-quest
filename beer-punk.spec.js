@@ -1,21 +1,21 @@
-describe("Books App", ()=>{
+describe("Beer App", ()=>{
 //
      describe("urlBuilder", ()=> {
 
-         const url1 = 'https://api.nytimes.com/svc/books/v3/lists/2015-05-05/hardcover-fiction.json?api-key=mGqS9lCf3m3v6lc7FKR9rLCBcHxAMo0f'
+         const url1 = 'https://api.openbrewerydb.org/breweries?page=1&per_page=5&by_state=Washington&by_city=Bothell&sort=type,name:asc'
 
-         const BASE_URL = 'https://api.nytimes.com/svc/books/v3/';
+         // const BASE_URL = 'https://api.nytimes.com/svc/books/v3/';
+         //
+         // const API_KEY ='mGqS9lCf3m3v6lc7FKR9rLCBcHxAMo0f'
 
-         const API_KEY ='mGqS9lCf3m3v6lc7FKR9rLCBcHxAMo0f'
+         const state = 'Washington'
 
-         const year = '2015'
+         const city = 'Bothell'
 
-         const month = '05'
-
-         const date = '05'
+         const page = '1'
 
          it("should return an url", ()=>{
-             let result = urlBuilder(BASE_URL, year, month, date, API_KEY)
+             let result = urlBuilder(state, city, page)
              expect(result).toEqual(url1)
          })
 
