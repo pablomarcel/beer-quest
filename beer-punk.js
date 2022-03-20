@@ -23,6 +23,9 @@ button1.className="btn btn-primary mr-4"
 button2.innerText="Don't Export JSON"
 button2.className="btn btn-primary mr-4"
 
+
+//due to some weird jasmine stuff, I need to check if the input checkbox exist prior to appending it
+
 if(x){
   if (divElCheck){
     divElCheck.append(x)
