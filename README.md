@@ -40,6 +40,8 @@ Also, this app uses vanilla Javascript and the Jasmine Testing Suite.
 * Implement Continuous Integration
 * Publish in Heroku, Digital Ocean or PythonAnywhere
 * if the API returns an empty array, display a message to the user
+* if the API returns an empty array, display an error message if the user selected Export to JSON
+
 
 
 
