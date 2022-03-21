@@ -126,6 +126,12 @@ const urlBuilder = function(state, city, page){
 
 }
 
+const responseChecker = function(resp){
+
+  return resp.length
+
+}
+
 const fetchAPI = function(e){
   if(e){
     e.preventDefault();
@@ -150,6 +156,8 @@ const fetchAPI = function(e){
       })
       .then(function(responseJson) {
         console.log(responseJson);
+
+        responseChecker(responseJson)
 
         let qty=responseJson.length
         console.log(qty)
@@ -201,9 +209,10 @@ const fetchAPI = function(e){
 
         }
 
-        // if (qty===0){
-        //   alert("API returned Empty Array. No More Beer For You!")
-        // }
+        if (qty===0){
+
+          alert("API returned Empty Array. No More Beer For You!")
+        }
 
         //I got sweetalert working. I am commenting out this section because I installed it through
         //npm following instructions here:
@@ -211,15 +220,15 @@ const fetchAPI = function(e){
         // Not sure if the person who will review this code has to go through extra steps to get
         //this working in his/her machine
 
-        if (qty===0){
-          swal({
-            icon: 'error',
-            title: 'API returned Empty Array...',
-            text: 'No More Beer For You!',
-
-          })
-
-        }
+        // if (qty===0){
+        //   swal({
+        //     icon: 'error',
+        //     title: 'API returned Empty Array...',
+        //     text: 'No More Beer For You!',
+        //
+        //   })
+        //
+        // }
 
         let generateJson = document.getElementById('myCheck');
 

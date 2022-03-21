@@ -4,10 +4,6 @@ describe("Beer App", ()=>{
 
          const url1 = 'https://api.openbrewerydb.org/breweries?page=1&per_page=5&by_state=Washington&by_city=Bothell&sort=type,name:asc'
 
-         // const BASE_URL = 'https://api.nytimes.com/svc/books/v3/';
-         //
-         // const API_KEY ='mGqS9lCf3m3v6lc7FKR9rLCBcHxAMo0f'
-
          const state = 'Washington'
 
          const city = 'Bothell'
@@ -19,60 +15,62 @@ describe("Beer App", ()=>{
              expect(result).toEqual(url1)
          })
 
+
+
+
      })
 
-    // describe("fetch Function", ()=> {
-    //
-    //     const url1 = 'https://api.nytimes.com/svc/books/v3/lists/2015-05-05/hardcover-fiction.json?api-key=mGqS9lCf3m3v6lc7FKR9rLCBcHxAMo0f'
-    //
-    //     const BASE_URL = 'https://api.nytimes.com/svc/books/v3/';
-    //
-    //     const API_KEY ='mGqS9lCf3m3v6lc7FKR9rLCBcHxAMo0f'
-    //
-    //     const year = '2015'
-    //
-    //     const month = '05'
-    //
-    //     const date = '05'
-    //
-    //     it("should return an url", ()=>{
-    //         let result = fetchAPI()
-    //         expect(result).toEqual(url1)
-    //     })
-    //
-    // })
+    describe("Empty Response Checker", ()=> {
 
+        const url1 = 'https://api.openbrewerydb.org/breweries?page=3&per_page=5&by_state=Washington&by_city=Bothell&sort=type,name:asc'
 
-//
-//         //const formEl = document.getElementById('best-books-form');
-//
-//         const url1 = 'https://api.nytimes.com/svc/books/v3/lists/2015-05-05/hardcover-fiction.json?api-key=mGqS9lCf3m3v6lc7FKR9rLCBcHxAMo0f'
-//
-//         it("should return url", () => {
-//             const result = fetchAPI()
-//             expect(result).toEqual(url1)
-//         })
-//
-//
-//     // it("should return MEMORY MAN", ()=>{
-//     //
-//     //     const result = fetch(url1)
-//     //
-//     //     // result.then(function (data){
-//     //     //     return data.json()
-//     //     // }).then(function(responseJson){
-//     //     //     expect(responseJson.results.books[0]).toEqual("MEMORY MAN")
-//     //     // })
-//     //
-//     //     result.then(function (data){
-//     //         expect(data.json()).toEqual()
-//     //     })
-//     //
-//     //     // console.log(result)
-//     //     //
-//     //     // expect(result).toEqual("MEMORY MAN")
-//     //
-//     // })
+        it("should return 0", (done)=>{
+
+            let resp = fetch(url1).then(function (data){
+                return data.json()
+            }).then(function (respJson){
+                expect(respJson.length).toEqual(0)
+                done()
+            })
+
+        })
+
+    })
+
+    describe("Response Returns 5 Elements", ()=> {
+
+        const url1 = 'https://api.openbrewerydb.org/breweries?page=1&per_page=5&by_state=Washington&by_city=Bothell&sort=type,name:asc'
+
+        it("should return 5", (done)=>{
+
+            let resp = fetch(url1).then(function (data){
+                return data.json()
+            }).then(function (respJson){
+                expect(respJson.length).toEqual(5)
+                done()
+            })
+
+        })
+
+    })
+
+    describe("Response Returns 1 Element", ()=> {
+
+        const url1 = 'https://api.openbrewerydb.org/breweries?page=2&per_page=5&by_state=Washington&by_city=Bothell&sort=type,name:asc'
+
+        it("should return 1", (done)=>{
+
+            let resp = fetch(url1).then(function (data){
+                return data.json()
+            }).then(function (respJson){
+                expect(respJson.length).toEqual(1)
+                done()
+            })
+
+        })
+
+    })
+
 //
 //     // it("should be async", function(done){
 //     //
