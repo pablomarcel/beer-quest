@@ -15,9 +15,6 @@ describe("Beer App", ()=>{
              expect(result).toEqual(url1)
          })
 
-
-
-
      })
 
     describe("Empty Response Checker", ()=> {
@@ -71,27 +68,21 @@ describe("Beer App", ()=>{
 
     })
 
-//
-//     // it("should be async", function(done){
-//     //
-//     //     fetch(url1).then(function(data){
-//     //         expect(data).toBe(true)
-//     //         done()
-//     //     })
-//     //
-//     // })
-//
-//     // beforeEach(function() {
-//     //     return new Promise(function(resolve, reject) {
-//     //         // do something asynchronous
-//     //         resolve();
-//     //     });
-//     // });
-//     //
-//     // it('does a thing', function() {
-//     //     return fetch(url1).then(function (result) {
-//     //         expect(result.json().copyright).toEqual("Copyright (c) 2022 The New York Times Company.  All Rights Reserved.");
-//     //     });
-//     // });
-//
+    describe("Response Returns truthy", ()=> {
+
+        const url1 = 'https://api.openbrewerydb.org/breweries?page=1&per_page=5&by_state=California&by_city=Sunnyvale&sort=type,name:asc'
+
+        it("should return true", (done)=>{
+
+            let resp = fetch(url1).then(function (data){
+                return data.json()
+            }).then(function (respJson){
+                expect(respJson).toBeTruthy()
+                done()
+            })
+
+        })
+
+    })
+
 })

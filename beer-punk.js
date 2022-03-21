@@ -46,14 +46,12 @@ if(x){
   if (divElCheck){
     divElCheck.append(x)
   }
-
 }
 
 if (button1){
   if(divElCheck){
     divElCheck.append(button1)
   }
-
 }
 
 if (button2){
@@ -95,7 +93,7 @@ class BreweryBatch{
 
   exportToTxt(){
     console.log(JSON.stringify(this.breweryList, null, 2))
-    let myJsonString = JSON.stringify(this.breweryList)
+    //let myJsonString = JSON.stringify(this.breweryList)
     exportToJsonFile(this.breweryList)
 
   }
@@ -205,12 +203,9 @@ const fetchAPI = function(e){
 
           }
 
-
-
         }
 
         if (qty===0){
-
           alert("API returned Empty Array. No More Beer For You!")
         }
 
@@ -225,9 +220,7 @@ const fetchAPI = function(e){
         //     icon: 'error',
         //     title: 'API returned Empty Array...',
         //     text: 'No More Beer For You!',
-        //
         //   })
-        //
         // }
 
         let generateJson = document.getElementById('myCheck');
