@@ -1,0 +1,72 @@
+/*.container{*/
+/*    !*font-size: 45px;*!*/
+/*    background-color: black;*/
+/*    !*color: #ba9d37;*!*/
+/*    !*color: blue;*!*/
+/*}*/
+
+.notice-container{
+    font-size: 18px;
+    /*background-color: tomato;*/
+    /*color: #ba9d37;*/
+    color: orange;
+}
+
+body {
+    font-size: 16px;
+    /*background: black;*/
+    /*background-color: tomato;*/
+}
+
+.top-title{
+    font-size: 45px;
+    background-color: white;
+    /*color: #ba9d37;*/
+    color: blue;
+
+}
+
+.form-group{
+    font-size: 16px;
+    background-color: powderblue;
+    /*color: #ba9d37;*/
+    color: orangered;
+    font-weight: bold;
+    /*opacity: 0.5;*/
+
+}
+
+input:invalid{
+    box-shadow: 2px 2px 5px orangered;
+}
+input:valid{
+    box-shadow: 2px 2px 5px blue;
+}
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+#beer-name{
+    font-size: 40px;
+    background-color: powderblue;
+    /*color: #ba9d37;*/
+    color: tomato;
+}
+
+#beer-city{
+    font-size: 30px;
+    background-color: powderblue;
+    /*color: #ba9d37;*/
+    color: blue;
+}
+
+#beer-street{
+    font-size: 16px;
+    background-color: powderblue;
+    /*color: #ba9d37;*/
+    color: cadetblue;
+}
