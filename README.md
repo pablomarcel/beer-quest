@@ -18,6 +18,10 @@ Also, this app uses vanilla Javascript and the Jasmine Testing Suite.
 ## Testing *beer-punk.spec.js* ##
 
 * Added unit testing for urlBuilder
+* Checked against an empty response
+* Checked against a response with 5 elements
+* Checked against a response with 1 elements
+* Checked if a response exists
 
 
 # Requirements #
