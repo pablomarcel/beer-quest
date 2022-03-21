@@ -39,7 +39,6 @@ Also, this app uses vanilla Javascript and the Jasmine Testing Suite.
 * Ability to click on a Brewery and display additional details. The Open Brewery DB API has functionality to search by Brewery.
 * Implement Continuous Integration, TravisCI or other CI tools
 * Publish in Heroku, DigitalOcean or PythonAnywhere
-* if the API returns an empty array, display a message to the user
 * if the API returns an empty array, display an error message if the user selected Export to JSON
 * Verify that a State actually exists
 * Verify that a City actually exists
